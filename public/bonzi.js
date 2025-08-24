@@ -8,16 +8,21 @@ const phrases = [
   "hi im definitely not spyware click me for infinite funsies",
 ];
 
-setInterval(() => {
-  const speech = document.getElementById("bonzi-speech");
-  speech.textContent = phrases[Math.floor(Math.random() * phrases.length)];
-}, 5000);
+export default function runBonzi(container) {
+  if (!container) return;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const bonzi = document.getElementById("bonzi");
+  const bonzi = container.querySelector("#bonzi");
+  const speech = container.querySelector("#bonzi-speech");
+
   if (bonzi) {
     bonzi.addEventListener("click", () => {
       window.open("https://vx-underground.org/", "_blank");
     });
   }
-});
+
+  if (speech) {
+    setInterval(() => {
+      speech.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+    }, 5000);
+  }
+}

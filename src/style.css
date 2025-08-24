@@ -145,3 +145,20 @@ button {
   border: 3px dotted yellow;
 }
 
+@keyframes rainbow {
+  0% { color: red; }
+  25% { color: orange; }
+  50% { color: yellow; }
+  75% { color: green; }
+  100% { color: blue; }
+}
+
+.spoiler {
+  background-color: black;
+  color: black;
+  user-select: none;
+}
+.spoiler:hover {
+  color: white;
+}
+
